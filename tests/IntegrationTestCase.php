@@ -3,7 +3,6 @@
 namespace VictorYoalli\StringMacros\Test;
 
 use Orchestra\Testbench\TestCase as Orchestra;
-use VictorYoalli\StringMacros\StringMacrosServiceProvider;
 
 abstract class IntegrationTestCase extends Orchestra
 {
