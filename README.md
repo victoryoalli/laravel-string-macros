@@ -1,7 +1,7 @@
 # A set of useful Laravel string macros
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/victoryoalli/laravel-string-macros.svg?style=flat-square)](https://packagist.org/packages/victoryoalli/laravel-string-macros)
-![Run tests](https://github.com/victoryoalli/laravel-string-macros/workflows/Run%20tests/badge.svg)
+![Run Tests](https://github.com/victoryoalli/laravel-string-macros/workflows/run-tests/badge.svg)
 ![Check & fix styling](https://github.com/victoryoalli/laravel-string-macros/workflows/Check%20&%20fix%20styling/badge.svg)
 [![Total Downloads](https://img.shields.io/packagist/dt/victoryoalli/laravel-string-macros.svg?style=flat-square)](https://packagist.org/packages/victoryoalli/laravel-string-macros)
 
