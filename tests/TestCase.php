@@ -2,10 +2,9 @@
 
 namespace VictorYoalli\StringMacros\Tests;
 
-use VictorYoalli\StringMacros\StringMacrosServiceProvider;
 use PHPUnit\Framework\TestCase as BaseTestCase;
 use ReflectionClass;
-
+use VictorYoalli\StringMacros\StringMacrosServiceProvider;
 
 class TestCase extends BaseTestCase
 {

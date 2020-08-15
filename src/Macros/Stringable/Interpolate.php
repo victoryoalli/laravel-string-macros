@@ -8,7 +8,7 @@ class Interpolate
 {
     public function __invoke()
     {
-        return function($values){
+        return function ($values) {
             return new static(Str::interpolate($this->value, $values));
         };
     }
