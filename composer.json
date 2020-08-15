@@ -1,11 +1,11 @@
 {
-    "name": "victoryoalli/skeleton",
-    "description": "SkeletonDescription",
+    "name": "victoryoalli/laravel-string-macros",
+    "description": "A set of useful Laravel string macros",
     "keywords": [
         "victoryoalli",
-        "skeleton"
+        "laravel-string-macros"
     ],
-    "homepage": "https://github.com/victoryoalli/skeleton",
+    "homepage": "https://github.com/victoryoalli/laravel-string-macros",
     "license": "MIT",
     "type": "library",
     "authors": [
@@ -17,7 +17,8 @@
         }
     ],
     "require": {
-        "php": "^7.4"
+        "php": "^7.4",
+        "illuminate/support": "^7.0"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^2.16",
@@ -28,12 +29,12 @@
     },
     "autoload": {
         "psr-4": {
-            "VictorYoalli\\Skeleton\\": "src"
+            "VictorYoalli\\StringMacros\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VictorYoalli\\Skeleton\\Tests\\": "tests"
+            "VictorYoalli\\StringMacros\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -48,11 +49,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VictorYoalli\\Skeleton\\SkeletonServiceProvider"
-            ],
-            "aliases": {
-                "Skeleton": "VictorYoalli\\Skeleton\\SkeletonFacade"
-            }
+                "VictorYoalli\\StringMacros\\StringMacrosServiceProvider"
+            ]
         }
     },
     "minimum-stability": "dev",

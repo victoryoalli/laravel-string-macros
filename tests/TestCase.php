@@ -1,38 +1,23 @@
 <?php
 
-namespace VictorYoalli\Skeleton\Tests;
+namespace VictorYoalli\StringMacros\Tests;
 
-use Orchestra\Testbench\TestCase as Orchestra;
-use VictorYoalli\Skeleton\SkeletonServiceProvider;
+use VictorYoalli\StringMacros\StringMacrosServiceProvider;
+use PHPUnit\Framework\TestCase as BaseTestCase;
+use ReflectionClass;
 
-class TestCase extends Orchestra
+
+class TestCase extends BaseTestCase
 {
-    public function setUp(): void
+    public function setup(): void
     {
-        parent::setUp();
-
-        $this->withFactories(__DIR__.'/database/factories');
+        $this->createDummyprovider()->register();
     }
 
-    protected function getPackageProviders($app)
+    protected function createDummyprovider(): StringMacrosServiceProvider
     {
-        return [
-            SkeletonServiceProvider::class,
-        ];
-    }
+        $reflectionClass = new ReflectionClass(StringMacrosServiceProvider::class);
 
-    public function getEnvironmentSetUp($app)
-    {
-        $app['config']->set('database.default', 'sqlite');
-        $app['config']->set('database.connections.sqlite', [
-            'driver' => 'sqlite',
-            'database' => ':memory:',
-            'prefix' => '',
-        ]);
-
-        /*
-        include_once __DIR__.'/../database/migrations/create_skeleton_tables.php.stub';
-        (new \CreatePackageTables())->up();
-        */
+        return $reflectionClass->newInstanceWithoutConstructor();
     }
 }
