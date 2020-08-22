@@ -26,10 +26,10 @@ composer require victoryoalli/laravel-string-macros
     - [stripTags](#striptags)
     - [wordsCount](#wordscount)
   - [Fluent String supported](#fluent-string-supported)
-    - [Testing](#testing)
-    - [Changelog](#changelog)
+  - [Testing](#testing)
+  - [Changelog](#changelog)
   - [Contributing](#contributing)
-    - [Security](#security)
+  - [Security](#security)
   - [Credits](#credits)
   - [License](#license)
 
@@ -87,13 +87,13 @@ echo $str;
 
 ```
 
-### Testing
+## Testing
 
 ``` bash
 composer test
 ```
 
-### Changelog
+## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
 
@@ -101,7 +101,7 @@ Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recen
 
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
-### Security
+## Security
 
 If you discover any security related issues, please email victoryoalli@gmail.com instead of using the issue tracker.
 

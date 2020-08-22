@@ -8,8 +8,8 @@ class StripTags
 {
     public function __invoke()
     {
-        return function () {
-            return new static(Str::stripTags($this->value));
+        return function ($allowed_tags = null) {
+            return new static(Str::stripTags($this->value, $allowed_tags));
         };
     }
 }
