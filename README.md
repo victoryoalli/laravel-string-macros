@@ -39,20 +39,20 @@ Gets the initicals of the words you provide. It defaults to 2 initials.
 Str::initials('Victor Yoalli Dominguez'); //default to 2 initials
 // VY
 
-Str::initials('Victor Yoalli Dominguez',3);
+Str::initials('Victor Yoalli Dominguez', 3);
 // VYD
 ```
 
 ### Interpolate
 Replaces question mark symbol to the words that you provide.
 ``` php
-Str::interpolate('Roses are ? Violets are ?','RED','BLUE');
+Str::interpolate('Roses are ? Violets are ?', 'RED', 'BLUE');
 // Roses are RED Violets are BLUE
 
-Str::interpolate('Roses are ? Violets are ?',['RED','BLUE']);
+Str::interpolate('Roses are ? Violets are ?', ['RED','BLUE']);
 // Roses are RED Violets are BLUE
 
-Str::interpolate('Roses are ? Violets are ?',...['RED','BLUE']);
+Str::interpolate('Roses are ? Violets are ?', ...['RED','BLUE']);
 // Roses are RED Violets are BLUE
 ```
 ### readingMinutes
