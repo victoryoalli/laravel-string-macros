@@ -7,7 +7,7 @@ class StripTags
     public function __invoke()
     {
         return function ($subject, $allowed_tags = null) {
-            return trim(strip_tags($subject, $allowed_tags));
+            return strip_tags($subject, $allowed_tags);
         };
     }
 }
