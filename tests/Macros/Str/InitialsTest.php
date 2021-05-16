@@ -27,4 +27,11 @@ class InitialsTest extends TestCase
         $str = Str::initials('Victor Yoalli Domínguez Torres', 10);
         $this->assertEquals('VYDT', $str);
     }
+
+    /** @test */
+    public function it_can_return_lines_count()
+    {
+        $count = Str::linesCount("Victor\n Yoalli\n Domínguez\n Torres");
+        $this->assertTrue($count == 4);
+    }
 }
