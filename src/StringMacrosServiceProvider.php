@@ -36,6 +36,7 @@ class StringMacrosServiceProvider extends ServiceProvider
             'initials' => \VictorYoalli\StringMacros\Macros\Str\Initials::class,
             'interpolate' => \VictorYoalli\StringMacros\Macros\Str\Interpolate::class,
             'linesCount' => \VictorYoalli\StringMacros\Macros\Str\LinesCount::class,
+            'matches' => \VictorYoalli\StringMacros\Macros\Str\Matches::class,
             'readingMinutes' => \VictorYoalli\StringMacros\Macros\Str\ReadingMinutes::class,
             'stripTags' => \VictorYoalli\StringMacros\Macros\Str\StripTags::class,
         ];
@@ -47,6 +48,7 @@ class StringMacrosServiceProvider extends ServiceProvider
             'initials' => \VictorYoalli\StringMacros\Macros\Stringable\Initials::class,
             'interpolate' => \VictorYoalli\StringMacros\Macros\Stringable\Interpolate::class,
             'linesCount' => \VictorYoalli\StringMacros\Macros\Stringable\LinesCount::class,
+            'matches' => \VictorYoalli\StringMacros\Macros\Stringable\Matches::class,
             'readingMinutes' => \VictorYoalli\StringMacros\Macros\Stringable\ReadingMinutes::class,
             'stripTags' => \VictorYoalli\StringMacros\Macros\Stringable\StripTags::class,
         ];
