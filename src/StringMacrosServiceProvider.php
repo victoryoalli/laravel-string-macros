@@ -32,23 +32,23 @@ class StringMacrosServiceProvider extends ServiceProvider
     protected function strMacros()
     {
         return [
-            'interpolate' => \VictorYoalli\StringMacros\Macros\Str\Interpolate::class,
-            'stripTags' => \VictorYoalli\StringMacros\Macros\Str\StripTags::class,
-            'wordsCount' => \VictorYoalli\StringMacros\Macros\Str\WordsCount::class,
-            'linesCount' => \VictorYoalli\StringMacros\Macros\Str\LinesCount::class,
+            'human' => \VictorYoalli\StringMacros\Macros\Str\Human::class,
             'initials' => \VictorYoalli\StringMacros\Macros\Str\Initials::class,
+            'interpolate' => \VictorYoalli\StringMacros\Macros\Str\Interpolate::class,
+            'linesCount' => \VictorYoalli\StringMacros\Macros\Str\LinesCount::class,
             'readingMinutes' => \VictorYoalli\StringMacros\Macros\Str\ReadingMinutes::class,
+            'stripTags' => \VictorYoalli\StringMacros\Macros\Str\StripTags::class,
         ];
     }
     protected function stringableMacros()
     {
         return [
-            'interpolate' => \VictorYoalli\StringMacros\Macros\Stringable\Interpolate::class,
-            'stripTags' => \VictorYoalli\StringMacros\Macros\Stringable\StripTags::class,
-            'wordsCount' => \VictorYoalli\StringMacros\Macros\Stringable\WordsCount::class,
-            'linesCount' => \VictorYoalli\StringMacros\Macros\Stringable\LinesCount::class,
+            'human' => \VictorYoalli\StringMacros\Macros\Stringable\Human::class,
             'initials' => \VictorYoalli\StringMacros\Macros\Stringable\Initials::class,
+            'interpolate' => \VictorYoalli\StringMacros\Macros\Stringable\Interpolate::class,
+            'linesCount' => \VictorYoalli\StringMacros\Macros\Stringable\LinesCount::class,
             'readingMinutes' => \VictorYoalli\StringMacros\Macros\Stringable\ReadingMinutes::class,
+            'stripTags' => \VictorYoalli\StringMacros\Macros\Stringable\StripTags::class,
         ];
     }
 }
