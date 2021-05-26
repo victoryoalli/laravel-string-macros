@@ -9,13 +9,13 @@ class HumanTest extends TestCase
     /** @test */
     public function it_can_convert_to_human_str_test()
     {
-        $str = Str::human('todos-los_dias');
-        $this->assertEquals('todos los dias', $str);
+        $str = Str::human('todos-los_dias fooBar');
+        $this->assertEquals('todos los dias foo bar', $str);
     }
     /** @test */
     public function it_can_convert_to_human_stringable_test()
     {
-        $str = Str::of('todos-los_dias')->human();
-        $this->assertEquals('todos los dias', $str);
+        $str = Str::of('todos-los_dias fooBar')->human();
+        $this->assertEquals('todos los dias foo bar', $str);
     }
 }
