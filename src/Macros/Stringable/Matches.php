@@ -9,7 +9,9 @@ class Matches
     public function __invoke()
     {
         return function ($regex) {
-            return (bool) new static(Str::matches($regex, $this->value));
+            $result = (new static(Str::matches($regex, $this->value)));
+
+            return (bool)$result->value;
         };
     }
 }

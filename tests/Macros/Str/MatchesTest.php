@@ -17,5 +17,9 @@ class MatchesTest extends TestCase
     {
         $result = Str::of('todos-los_dias fooBar')->matches('/fooBar$/');
         $this->assertTrue($result);
+        $result = Str::of('todos-los_dias fooBar')->matches('/^fooBar$/');
+        $this->assertFalse($result);
+        $result = Str::of('lorem ipsum')->matches('/^fooBar$/');
+        $this->assertFalse($result);
     }
 }
