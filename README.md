@@ -1,7 +1,6 @@
 # A set of useful Laravel string macros
 
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/victoryoalli/laravel-string-macros)
-[![Total Downloads](https://img.shields.io/packagist/dt/victoryoalli/laravel-string-macros.svg?style=flat-square)](https://packagist.org/packages/victoryoalli/laravel-string-macros)
 ![Packagist Downloads](https://img.shields.io/packagist/dt/victoryoalli/laravel-string-macros)
 
 This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
