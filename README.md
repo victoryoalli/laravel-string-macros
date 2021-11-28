@@ -1,9 +1,8 @@
 # A set of useful Laravel string macros
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/victoryoalli/laravel-string-macros.svg?style=flat-square)](https://packagist.org/packages/victoryoalli/laravel-string-macros)
-![Run Tests](https://github.com/victoryoalli/laravel-string-macros/workflows/run-tests/badge.svg)
-![Check & fix styling](https://github.com/victoryoalli/laravel-string-macros/workflows/Check%20&%20fix%20styling/badge.svg)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/victoryoalli/laravel-string-macros)
 [![Total Downloads](https://img.shields.io/packagist/dt/victoryoalli/laravel-string-macros.svg?style=flat-square)](https://packagist.org/packages/victoryoalli/laravel-string-macros)
+![Packagist Downloads](https://img.shields.io/packagist/dt/victoryoalli/laravel-string-macros)
 
 This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
 
