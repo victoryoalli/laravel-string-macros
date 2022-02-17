@@ -7,7 +7,7 @@ class WordsCount
     public function __invoke()
     {
         return function ($subject) {
-            return str_word_count(strip_tags($subject));
+            return strval(str_word_count(strip_tags($subject)));
         };
     }
 }
