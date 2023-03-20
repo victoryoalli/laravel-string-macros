@@ -9,7 +9,7 @@ class ReadingMinutes
     public function __invoke()
     {
         return function ($subject, $wordsPerMinute = 200) {
-            return intval(ceil(Str::wordsCount(strip_tags($subject)) / $wordsPerMinute));
+            return intval(ceil(Str::wordCount(strip_tags($subject)) / $wordsPerMinute));
         };
     }
 }

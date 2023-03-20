@@ -22,7 +22,6 @@ composer require victoryoalli/laravel-string-macros
     - [Interpolate](#interpolate)
     - [readingMinutes](#readingminutes)
     - [stripTags](#striptags)
-    - [wordsCount](#wordscount)
   - [Fluent String supported](#fluent-string-supported)
   - [Testing](#testing)
   - [Changelog](#changelog)
@@ -68,12 +67,6 @@ Str::readingMinutes('Pellentesque purus imperdiet dis duis netus dapibus mattis 
 ```php
 Str::stripTags('<strong>Hello</strong> <i>World!</i>');
 // Hello World!
-```
-
-### wordsCount
-```php
-Str::wordsCount('Hac non ipsum dolor nisi penatibus maecenas luctus purus rutrum, commodo leo sed ut lacinia gravida primis aliquet eget finibus, consequat sapien platea urna vehicula adipiscing est tortor.');
-// 28
 ```
 
 ## Fluent String supported
