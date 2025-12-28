@@ -9,7 +9,7 @@ class Initials
     public function __invoke()
     {
         return function ($number = 2) {
-            return new static(Str::interpolate($this->value, $number));
+            return new static(Str::initials($this->value, $number));
         };
     }
 }

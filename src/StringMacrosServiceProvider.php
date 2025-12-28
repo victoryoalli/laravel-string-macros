@@ -32,22 +32,19 @@ class StringMacrosServiceProvider extends ServiceProvider
     protected function strMacros()
     {
         return [
-            'human' => \VictorYoalli\StringMacros\Macros\Str\Human::class,
             'initials' => \VictorYoalli\StringMacros\Macros\Str\Initials::class,
             'interpolate' => \VictorYoalli\StringMacros\Macros\Str\Interpolate::class,
             'linesCount' => \VictorYoalli\StringMacros\Macros\Str\LinesCount::class,
-            'matches' => \VictorYoalli\StringMacros\Macros\Str\Matches::class,
             'readingMinutes' => \VictorYoalli\StringMacros\Macros\Str\ReadingMinutes::class,
         ];
     }
+
     protected function stringableMacros()
     {
         return [
-            'human' => \VictorYoalli\StringMacros\Macros\Stringable\Human::class,
             'initials' => \VictorYoalli\StringMacros\Macros\Stringable\Initials::class,
             'interpolate' => \VictorYoalli\StringMacros\Macros\Stringable\Interpolate::class,
             'linesCount' => \VictorYoalli\StringMacros\Macros\Stringable\LinesCount::class,
-            'matches' => \VictorYoalli\StringMacros\Macros\Stringable\Matches::class,
             'readingMinutes' => \VictorYoalli\StringMacros\Macros\Stringable\ReadingMinutes::class,
         ];
     }

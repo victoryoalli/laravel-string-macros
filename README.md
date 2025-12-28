@@ -1,92 +1,212 @@
-# A set of useful Laravel string macros
+# Laravel String Macros
 
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/victoryoalli/laravel-string-macros)
 ![Packagist Downloads](https://img.shields.io/packagist/dt/victoryoalli/laravel-string-macros)
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+A collection of useful string macros for Laravel's `Str` and `Stringable` classes.
+
+## Requirements
+
+| Version | PHP | Laravel |
+|---------|-----|---------|
+| 2.x | ^8.1 | 10.x, 11.x |
+| 1.x | ^8.0 | 8.x, 9.x, 10.x |
 
 ## Installation
-
-You can install the package via composer:
 
 ```bash
 composer require victoryoalli/laravel-string-macros
 ```
 
-## Macros
+## Available Macros
 
-- [A set of useful Laravel string macros](#a-set-of-useful-laravel-string-macros)
-  - [Installation](#installation)
-  - [Macros](#macros)
-    - [Initials](#initials)
-    - [Interpolate](#interpolate)
-    - [readingMinutes](#readingminutes)
-    - [stripTags](#striptags)
-  - [Fluent String supported](#fluent-string-supported)
-  - [Testing](#testing)
-  - [Changelog](#changelog)
-  - [Contributing](#contributing)
-  - [Security](#security)
-  - [Credits](#credits)
-  - [License](#license)
+All macros are available both as static methods on `Str` and as fluent methods on `Stringable`.
 
-### Initials
-Gets the initicals of the words you provide. It defaults to 2 initials.
-``` php
-Str::initials('Victor Yoalli Dominguez'); //default to 2 initials
-// VY
+### initials
 
-Str::initials('Victor Yoalli Dominguez',3);
-// VYD
+Gets the initials of the words you provide. Defaults to 2 initials.
+
+```php
+use Illuminate\Support\Str;
+
+// Static usage
+Str::initials('Victor Yoalli Dominguez');
+// "VY"
+
+Str::initials('Victor Yoalli Dominguez', 3);
+// "VYD"
+
+// Fluent usage
+Str::of('Victor Yoalli Dominguez')->initials()->toString();
+// "VY"
+
+Str::of('Victor Yoalli Dominguez')->initials(3)->upper()->toString();
+// "VYD"
 ```
 
-### Interpolate
-Replaces question mark symbol to the words that you provide.
-``` php
-Str::interpolate('Roses are ? Violets are ?','RED','BLUE');
-// Roses are RED Violets are BLUE
+**Note:** Words are split by spaces, commas, underscores, and hyphens. For example, `Jean-Pierre` is treated as two words.
 
-Str::interpolate('Roses are ? Violets are ?',['RED','BLUE']);
-// Roses are RED Violets are BLUE
+### interpolate
 
-Str::interpolate('Roses are ? Violets are ?',...['RED','BLUE']);
-// Roses are RED Violets are BLUE
+Replaces `?` placeholders with the values you provide.
+
+```php
+use Illuminate\Support\Str;
+
+// Static usage - multiple arguments
+Str::interpolate('Roses are ? Violets are ?', 'RED', 'BLUE');
+// "Roses are RED Violets are BLUE"
+
+// Static usage - array
+Str::interpolate('Roses are ? Violets are ?', ['RED', 'BLUE']);
+// "Roses are RED Violets are BLUE"
+
+// Static usage - spread operator
+Str::interpolate('Roses are ? Violets are ?', ...['RED', 'BLUE']);
+// "Roses are RED Violets are BLUE"
+
+// Fluent usage
+Str::of('Hello ? and ?')->interpolate(['World', 'Universe'])->toString();
+// "Hello World and Universe"
 ```
+
 ### readingMinutes
-Calculates how many minutes it takes to read the text provided.
-It accepts HTML too, it will strip tags to make an accurate calculation.
-``` php
-Str::readingMinutes('Roses are RED Violets are BLUE...');
+
+Calculates how many minutes it takes to read the text. Accepts HTML (tags are stripped for accurate calculation). Default reading speed is 200 words per minute.
+
+```php
+use Illuminate\Support\Str;
+
+// Static usage
+Str::readingMinutes('Your long article text here...');
 // 1
 
-Str::readingMinutes('Pellentesque purus imperdiet dis duis netus dapibus mattis adipiscing at ultricies, rutrum volutpat quam ex himenaeos consectetur fusce tempus nostra, mollis fermentum ac fringilla donec lobortis potenti eros pharetra...');
-// 1
+// With custom words per minute
+Str::readingMinutes($longText, 150);
+// 3
+
+// Fluent usage
+Str::of('<p>HTML content</p>')->readingMinutes()->toString();
+// "1"
 ```
 
-### stripTags
+### linesCount
+
+Counts the number of lines in a string (splits by `\n` or `\r`).
+
 ```php
-Str::stripTags('<strong>Hello</strong> <i>World!</i>');
-// Hello World!
+use Illuminate\Support\Str;
+
+// Static usage
+Str::linesCount("Line 1\nLine 2\nLine 3");
+// 3
+
+// Fluent usage
+Str::of("Hello\nWorld")->linesCount()->toString();
+// "2"
 ```
 
-## Fluent String supported
-Example
+## Fluent Chaining
+
+All macros can be chained with other `Stringable` methods:
+
 ```php
-$str = Str::of('Hac non ? dolor nisi penatibus maecenas luctus purus rutrum, ? leo sed ut lacinia gravida primis aliquet eget finibus, consequat sapien platea urna vehicula adipiscing est tortor.')->interpolate(['RED','BLUE'])->initials(28)->upper();
-echo $str;
-// HNRDNPMLPRBLSULGPAEFCSPUVAET
+use Illuminate\Support\Str;
 
+$result = Str::of('? ? ?')
+    ->interpolate(['Victor', 'Yoalli', 'Dominguez'])
+    ->initials(3)
+    ->upper()
+    ->toString();
+// "VYD"
 ```
+
+---
+
+## Upgrading from v1.x to v2.x
+
+### Breaking Changes
+
+#### Removed Macros
+
+The following macros have been **removed** because they are now available natively in Laravel 10+:
+
+| Removed Macro | Use Instead | Available Since |
+|---------------|-------------|-----------------|
+| `Str::human($value)` | `Str::headline($value)` | Laravel 9.x |
+| `Str::matches($pattern, $value)` | `Str::isMatch($pattern, $value)` | Laravel 10.x |
+
+#### Migration Examples
+
+**Before (v1.x):**
+```php
+// human() - converts to human readable format
+Str::human('hello_world');  // "hello world"
+Str::of('hello_world')->human();
+
+// matches() - check if string matches regex
+Str::matches('/^hello/', 'hello world');  // true
+Str::of('hello world')->matches('/^hello/');
+```
+
+**After (v2.x) - Use Laravel native methods:**
+```php
+// headline() - converts to title case with spaces
+Str::headline('hello_world');  // "Hello World"
+Str::of('hello_world')->headline();
+
+// isMatch() - check if string matches regex
+Str::isMatch('/^hello/', 'hello world');  // true
+Str::of('hello world')->isMatch('/^hello/');
+```
+
+**Note:** `Str::headline()` capitalizes each word, while the old `Str::human()` did not. If you need lowercase output, chain with `->lower()`:
+
+```php
+Str::of('hello_world')->headline()->lower()->toString();
+// "hello world"
+```
+
+#### PHP and Laravel Version Requirements
+
+| Requirement | v1.x | v2.x |
+|-------------|------|------|
+| PHP | ^8.0 | ^8.1 |
+| Laravel | 8.x, 9.x, 10.x | 10.x, 11.x |
+
+### Upgrade Steps
+
+1. **Update your `composer.json`** or run:
+   ```bash
+   composer require victoryoalli/laravel-string-macros:^2.0
+   ```
+
+2. **Search and replace** removed macros in your codebase:
+   ```bash
+   # Find usages of removed macros
+   grep -r "Str::human\|->human(" app/
+   grep -r "Str::matches\|->matches(" app/
+   ```
+
+3. **Replace with native Laravel methods:**
+   - `Str::human()` → `Str::headline()`
+   - `Str::matches()` → `Str::isMatch()`
+   - `->human()` → `->headline()`
+   - `->matches()` → `->isMatch()`
+
+4. **Run your tests** to ensure everything works correctly.
+
+---
 
 ## Testing
 
-``` bash
+```bash
 composer test
 ```
 
 ## Changelog
 
-Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
+Please see [CHANGELOG](CHANGELOG.md) for more information about recent changes.
 
 ## Contributing
 
