@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Laravel String Macros is a PHP package that extends Laravel's `Str` and `Stringable` classes with additional utility methods. It uses Laravel's macro system to add methods like `initials`, `interpolate`, `readingMinutes`, and `linesCount`.
 
-Requires PHP ^8.1 and Laravel 10.x or 11.x.
+Requires PHP ^8.2 and Laravel 10.x, 11.x, or 12.x.
 
 ## Commands
 

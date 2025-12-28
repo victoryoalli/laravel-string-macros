@@ -9,7 +9,8 @@ A collection of useful string macros for Laravel's `Str` and `Stringable` classe
 
 | Version | PHP | Laravel |
 |---------|-----|---------|
-| 2.x | ^8.1 | 10.x, 11.x |
+| 2.1+ | ^8.2 | 10.x, 11.x, 12.x |
+| 2.0 | ^8.1 | 10.x, 11.x |
 | 1.x | ^8.0 | 8.x, 9.x, 10.x |
 
 ## Installation
@@ -169,10 +170,10 @@ Str::of('hello_world')->headline()->lower()->toString();
 
 #### PHP and Laravel Version Requirements
 
-| Requirement | v1.x | v2.x |
-|-------------|------|------|
-| PHP | ^8.0 | ^8.1 |
-| Laravel | 8.x, 9.x, 10.x | 10.x, 11.x |
+| Requirement | v1.x | v2.0 | v2.1+ |
+|-------------|------|------|-------|
+| PHP | ^8.0 | ^8.1 | ^8.2 |
+| Laravel | 8.x, 9.x, 10.x | 10.x, 11.x | 10.x, 11.x, 12.x |
 
 ### Upgrade Steps
 

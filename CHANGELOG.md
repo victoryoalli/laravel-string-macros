@@ -2,6 +2,15 @@
 
 All notable changes to `Laravel String Macros` will be documented in this file.
 
+## 2.1.0 - 2025-12-27
+
+### Added
+- Support for Laravel 12.x
+
+### Changed
+- Minimum PHP version is now 8.2 (was 8.1)
+- Updated orchestra/testbench to ^8.0|^9.0|^10.0
+
 ## 2.0.0 - 2025-12-27
 
 ### Added
