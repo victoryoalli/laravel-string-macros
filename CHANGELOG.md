@@ -2,7 +2,7 @@
 
 All notable changes to `Laravel String Macros` will be documented in this file.
 
-## 2.0.0 - 2024-XX-XX
+## 2.0.0 - 2025-12-27
 
 ### Added
 - Support for Laravel 11.x
